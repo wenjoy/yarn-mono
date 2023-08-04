@@ -1,0 +1,5 @@
+{
+  "name": "@yarn-mono/common",
+  "packageManager": "yarn@3.3.1",
+  "main": "index.ts"
+}
