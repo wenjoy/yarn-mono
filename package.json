@@ -3,5 +3,13 @@
   "packageManager": "yarn@3.6.3",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^27.5.2",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.1"
+  }
 }

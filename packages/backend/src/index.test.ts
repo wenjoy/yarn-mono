@@ -1,4 +1,4 @@
-import {print} from './index.ts'
+import {print} from '.'
 
 test('should print out', () => {
   print('hello world')

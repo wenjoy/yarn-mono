@@ -98,7 +98,43 @@ export default {
   // preset: undefined,
 
   // Run tests from one or more projects
-  // projects: undefined,
+  projects: [
+    {
+      displayName: 'backend-test',
+      transform: {
+        '^.+\\.ts?$': 'ts-jest',
+      },
+      testMatch: [
+        '<rootDir>/packages/backend/src/**/*.test.ts'
+      ]
+    },
+    {
+      displayName: 'common-test',
+      transform: {
+        '^.+\\.ts?$': 'ts-jest',
+      },
+      testMatch: [
+        '<rootDir>/packages/common/components/**/*.test.ts'
+      ]
+    },
+    {
+      rootDir: "packages/app1",
+      displayName: 'app-test',
+      testMatch: [
+        '<rootDir>/src/**/*.test.ts',
+        '<rootDir>/src/**/*.test.tsx',
+      ],
+      setupFilesAfterEnv: [
+        "<rootDir>/src/setupTests.ts"
+      ],
+      testEnvironment: "jsdom",
+      transform: {
+        "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+        "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+        "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      },
+    }
+  ],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
